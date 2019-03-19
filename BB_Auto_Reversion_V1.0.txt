@@ -15,5 +15,4 @@ plot UpperBand = MidLine + num_Dev_Up * sDev;
 
 addOrder(OrderType.BUY_TO_OPEN, (Low < LowerBand and Close > Lowerband), Open[-1], 1, tickColor = GetColor(9), arrowColor = GetColor(9));
 
-addOrder(OrderType.SELL_TO_CLOSE, (Close crosses above UpperBand), UpperBand, 1, tickColor = GetColor(9), arrowColor = GetColor(9));
-
+addOrder(OrderType.SELL_TO_CLOSE, (high crosses above UpperBand[-1]),UpperBand, 1, tickColor = GetColor(9), arrowColor = GetColor(9));
