@@ -6,6 +6,9 @@ input Num_Dev_Dn = -2.0;
 input Num_Dev_up = 2.0;
 input averageType = AverageType.Simple;
 
+addLabel( yes, "CONTROL", Color.White);
+addLabel( yes, "Entry at first -2 StdDev, No Exit", Color.White);
+
 def sDev = stdev(data = price[-displace], length = length);
 
 
@@ -18,4 +21,3 @@ plot UpperBand = MidLine + num_Dev_Up * sDev;
 
 
 addOrder(OrderType.BUY_TO_OPEN, (Low < LowerBand and Close > Lowerband), Open[-1], 1, tickColor = GetColor(9), arrowColor = GetColor(9));
-
